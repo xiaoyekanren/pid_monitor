@@ -2,8 +2,12 @@
 import time
 import csv
 import psutil
+import argparse
 
-pid = 12345
+p = argparse.ArgumentParser(description='monitor by pid')
+p.add_argument('-P', '--pid', dest='pid', type=int, help='input a pid')
+pid = p.parse_args().pid
+
 proc = psutil.Process(int(pid))
 f = open('pid.csv', 'w')
 f.truncate()
