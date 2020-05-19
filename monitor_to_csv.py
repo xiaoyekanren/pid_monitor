@@ -36,6 +36,8 @@ while True:
     if not psutil.pid_exists(pid):
         f.close()
         exit(0)
-    row = [pid, time.strftime("%Y-%m-%d %H:%M:%S"), proc.memory_percent(), proc.cpu_percent(), psutil.net_io_counters().bytes_recv, psutil.net_io_counters().bytes_sent, psutil.net_io_counters().packets_recv, psutil.net_io_counters().packets_sent]
+    row = [pid, time.strftime("%Y-%m-%d %H:%M:%S"), proc.memory_percent(), proc.cpu_percent(),
+           psutil.net_io_counters().bytes_recv, psutil.net_io_counters().bytes_sent,
+           psutil.net_io_counters().packets_recv, psutil.net_io_counters().packets_sent]
     f_csv.writerow(row)
     time.sleep(interval)
