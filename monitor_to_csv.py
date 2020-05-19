@@ -5,7 +5,7 @@ import psutil
 import argparse
 
 p = argparse.ArgumentParser(description='monitor by pid')
-p.add_argument('-P', '--pid', dest='pid', type=int, help='input a pid')
+p.add_argument('-P', '--pid', '-p', dest='pid', type=int, help='input a pid')
 pid = p.parse_args().pid
 p.add_argument('-i', '--interval', dest='interval', type=int)
 interval = p.parse_args().interval
